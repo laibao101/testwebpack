@@ -45,7 +45,7 @@ module.exports={
 			title:'this is c.html',
 			date:new Date(),
 			inject:'body',
-			excludeChunks:['b','a','main'],
+			excludeChunks:['b','a'],
 			minify:{
 				removeComments:true,
 				collapseWhitespace:false
