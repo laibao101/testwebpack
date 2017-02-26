@@ -13,7 +13,10 @@ module.exports={
 	},
 	plugins:[
 		new htmlWebpackPlugin({
-			template:'index.html'
+			template:'index.html',
+			filename:'index-[hash].html',
+			// inject:'head'
+			// inject:'body'
 		})
 	]
 }
