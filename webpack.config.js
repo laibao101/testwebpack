@@ -9,14 +9,18 @@ module.exports={
 	output:{
 		path:'./dist',
 		// filename:'[name]-[hash].js'
-		filename:'/js/[name]-[chunkhash].js'
+		filename:'js/[name]-[chunkhash].js',
+		publicPath:'http:cnd.com'
 	},
 	plugins:[
 		new htmlWebpackPlugin({
 			template:'index.html',
-			filename:'index-[hash].html',
+			filename:'index.html',
 			// inject:'head'
-			// inject:'body'
+			// inject:'body',
+			title:'webpack is good',
+			date:new Date(),
+			inject:false
 		})
 	]
 }

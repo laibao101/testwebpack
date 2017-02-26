@@ -4,8 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>webpack test</title>
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </head>
 <body>
+	The time is <%= htmlWebpackPlugin.options.date %>
+	<script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.a.entry %>"></script>
+
 </body>
 </html>
