@@ -20,7 +20,11 @@ module.exports={
 			// inject:'body',
 			title:'webpack is good',
 			date:new Date(),
-			inject:false
+			inject:false,
+			minify:{
+				removeComments:true,
+				collapseWhitespace:true
+			}
 		})
 	]
 }
