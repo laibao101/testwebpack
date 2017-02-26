@@ -21,7 +21,7 @@ module.exports={
 			title:'this is a.html',
 			date:new Date(),
 			inject:'body',
-			chunks:['main','a'],
+			excludeChunks:['b','c'],
 			minify:{
 				removeComments:true,
 				collapseWhitespace:false
@@ -33,7 +33,7 @@ module.exports={
 			title:'this is b.html',
 			date:new Date(),
 			inject:'body',
-			chunks:['main','b'],
+			excludeChunks:['a','c'],
 			minify:{
 				removeComments:true,
 				collapseWhitespace:false
@@ -45,7 +45,7 @@ module.exports={
 			title:'this is c.html',
 			date:new Date(),
 			inject:'body',
-			chunks:['main','c'],
+			excludeChunks:['b','a','main'],
 			minify:{
 				removeComments:true,
 				collapseWhitespace:false
