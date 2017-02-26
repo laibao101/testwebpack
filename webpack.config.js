@@ -20,7 +20,7 @@ module.exports={
 			filename:'a.html',
 			title:'this is a.html',
 			date:new Date(),
-			inject:'body',
+			inject:false,
 			excludeChunks:['b','c'],
 			minify:{
 				removeComments:true,
@@ -32,7 +32,7 @@ module.exports={
 			filename:'b.html',
 			title:'this is b.html',
 			date:new Date(),
-			inject:'body',
+			inject:false,
 			excludeChunks:['a','c'],
 			minify:{
 				removeComments:true,
@@ -44,7 +44,7 @@ module.exports={
 			filename:'c.html',
 			title:'this is c.html',
 			date:new Date(),
-			inject:'body',
+			inject:false,
 			excludeChunks:['b','a'],
 			minify:{
 				removeComments:true,
