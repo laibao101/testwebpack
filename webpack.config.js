@@ -10,7 +10,7 @@ module.exports={
 		path:'./dist',
 		// filename:'[name]-[hash].js'
 		filename:'js/[name]-[chunkhash].js',
-		publicPath:'http:cnd.com'
+		publicPath:'http://cnd.com'
 	},
 	plugins:[
 		new htmlWebpackPlugin({
