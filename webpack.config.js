@@ -1,55 +1,31 @@
-var htmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports={
-	// entry:['./src/script/main.js','./src/script/a.js'],
+module.exports = {
 	entry:{
-		main:'./src/script/main.js',
-		a:'./src/script/a.js',
-		b:'./src/script/b.js',
-		c:'./src/script/c.js'
+		app:'./srcs/app.js'
 	},
 	output:{
-		path:'./dist',
-		// filename:'[name]-[hash].js'
-		filename:'js/[name]-[chunkhash].js',
-		publicPath:'http://cnd.com'
+		filename:'js/[name].bundle.js',
+		path:'./dist'
 	},
 	plugins:[
 		new htmlWebpackPlugin({
-			template:'index.html',
-			filename:'a.html',
-			title:'this is a.html',
-			date:new Date(),
-			inject:false,
-			excludeChunks:['b','c'],
-			minify:{
-				removeComments:true,
-				collapseWhitespace:false
-			}
-		}),
-		new htmlWebpackPlugin({
-			template:'index.html',
-			filename:'b.html',
-			title:'this is b.html',
-			date:new Date(),
-			inject:false,
-			excludeChunks:['a','c'],
-			minify:{
-				removeComments:true,
-				collapseWhitespace:false
-			}
-		}),
-		new htmlWebpackPlugin({
-			template:'index.html',
-			filename:'c.html',
-			title:'this is c.html',
-			date:new Date(),
-			inject:false,
-			excludeChunks:['b','a'],
-			minify:{
-				removeComments:true,
-				collapseWhitespace:false
-			}
+			filename:'index.bundle.html',
+			template:'index.bundle.html',
+			inject:'body'
 		})
-	]
+	],
+	module:{
+		loaders:[
+			{
+				test:/\.js$/,
+				loader:'babel-loader',
+				query:{
+					presets:['es2015']
+				},
+				exclude:'./node_modules/',
+				include:'./srcs/'
+			}
+		]
+	}
 }
