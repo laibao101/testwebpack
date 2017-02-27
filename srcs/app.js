@@ -1,10 +1,8 @@
 import layer from './components/layer/layer.js';
-
-console.log(111);
+import './css/common.css';
 
 const App = function () {
 	console.log(layer);
 }
-console.log(222);
 
 new App();

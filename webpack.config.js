@@ -1,6 +1,8 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
+	context:__dirname,
 	entry:{
 		app:'./srcs/app.js'
 	},
@@ -23,9 +25,26 @@ module.exports = {
 				query:{
 					presets:['es2015']
 				},
-				exclude:'./node_modules/',
-				include:'./srcs/'
-			}
+				exclude:path.resolve(__dirname,'node_modules'),
+				include:path.resolve(__dirname,'srcs')
+			},
+			{
+				test:/\.css$/,
+				loader:'style-loader!css-loader'
+			},
+			{
+				test:/\.css$/,
+				loader:'postcss-loader',
+				include:path.resolve(__dirname,'srcs/css'),
+				options:{
+          plugins: function () {
+            return [
+              require('autoprefixer')
+            ];
+          }
+				}
+			},
+
 		]
 	}
 }
