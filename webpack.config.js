@@ -1,5 +1,6 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
 	context:__dirname,
@@ -15,6 +16,14 @@ module.exports = {
 			filename:'index.bundle.html',
 			template:'index.bundle.html',
 			inject:'body'
+		}),
+		new webpack.LoaderOptionsPlugin({
+			test:/\.css$/,
+			options:{
+				postcss:function () {
+					return [require('autoprefixer')];
+				}
+			}
 		})
 	],
 	module:{
@@ -30,7 +39,14 @@ module.exports = {
 			},
 			{
 				test:/\.css$/,
-				loader:'style-loader!css-loader'
+				loader:'style-loader'
+			},
+			{
+				test:/\.css$/,
+				loader:'css-loader',
+				options:{
+					importLoaders:1
+				}
 			},
 			{
 				test:/\.css$/,
@@ -44,6 +60,7 @@ module.exports = {
           }
 				}
 			},
+
 
 		]
 	}

@@ -138,8 +138,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/.0.26.2@css-loader/index.js!../../node_modules/.1.3.2@postcss-loader/index.js??ref--2!./common.css", function() {
-			var newContent = require("!!../../node_modules/.0.26.2@css-loader/index.js!../../node_modules/.1.3.2@postcss-loader/index.js??ref--2!./common.css");
+		module.hot.accept("!!../../node_modules/.0.26.2@css-loader/index.js??ref--2!../../node_modules/.1.3.2@postcss-loader/index.js??ref--3!./common.css", function() {
+			var newContent = require("!!../../node_modules/.0.26.2@css-loader/index.js??ref--2!../../node_modules/.1.3.2@postcss-loader/index.js??ref--3!./common.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -444,7 +444,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, ".flex-div{\n\tdisplay: flex;\n}\n", ""]);
+exports.push([module.i, ".flex-div{\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n}\n", ""]);
 
 // exports
 
