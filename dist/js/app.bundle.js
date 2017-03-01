@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -124,53 +124,6 @@ module.exports = function() {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(4);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(3)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/.0.26.2@css-loader/index.js??ref--2!../../node_modules/.1.3.2@postcss-loader/index.js??ref--3!./common.css", function() {
-			var newContent = require("!!../../node_modules/.0.26.2@css-loader/index.js??ref--2!../../node_modules/.1.3.2@postcss-loader/index.js??ref--3!./common.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// import tpl from './layer.html';
-
-function layer() {
-	return {
-		name: 'layer',
-		tpl: tpl
-	};
-}
-
-exports.default = layer;
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 /*
@@ -422,12 +375,99 @@ function updateLink(linkElement, obj) {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(6);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/.0.26.2@css-loader/index.js??ref--2!../../node_modules/.1.3.2@postcss-loader/index.js??ref--4!./common.css", function() {
+			var newContent = require("!!../../node_modules/.0.26.2@css-loader/index.js??ref--2!../../node_modules/.1.3.2@postcss-loader/index.js??ref--4!./common.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+__webpack_require__(4);
+
+function layer() {
+	return {
+		name: 'layer',
+		tpl: tpl
+	};
+} // import tpl from './layer.html';
+exports.default = layer;
+
+/***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(5);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/.0.26.2@css-loader/index.js!../../../node_modules/.1.3.2@postcss-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./layer.scss", function() {
+			var newContent = require("!!../../../node_modules/.0.26.2@css-loader/index.js!../../../node_modules/.1.3.2@postcss-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./layer.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
 // imports
-exports.i(__webpack_require__(5), "");
+
+
+// module
+exports.push([module.i, ".flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.layer {\n  width: 600px;\n  height: 200px;\n  background-color: green; }\n  .layer div {\n    width: 400px;\n    height: 100px;\n    background-color: red; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)();
+// imports
+exports.i(__webpack_require__(7), "");
 
 // module
 exports.push([module.i, "html,body{\n\tpadding: 0;\n\tmargin: 0;\n\tbackground-color: red;\n}\n\nul,li{\n\tpadding: 0;\n\tmargin: 0;\n\tlist-style: none;\n}\n", ""]);
@@ -436,7 +476,7 @@ exports.push([module.i, "html,body{\n\tpadding: 0;\n\tmargin: 0;\n\tbackground-c
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -450,17 +490,17 @@ exports.push([module.i, ".flex-div{\n\tdisplay: -webkit-box;\n\tdisplay: -ms-fle
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _layer = __webpack_require__(2);
+var _layer = __webpack_require__(3);
 
 var _layer2 = _interopRequireDefault(_layer);
 
-__webpack_require__(1);
+__webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

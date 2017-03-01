@@ -24,7 +24,15 @@ module.exports = {
 					return [require('autoprefixer')];
 				}
 			}
-		})
+		}),
+		new webpack.LoaderOptionsPlugin({
+			test:/\.scss$/,
+			options:{
+				postcss:function () {
+					return [require('autoprefixer')];
+				}
+			}
+		}),
 	],
 	module:{
 		loaders:[
@@ -49,6 +57,10 @@ module.exports = {
 				}
 			},
 			{
+				test:/\.scss$/,
+				loader:'style-loader!css-loader!postcss-loader!sass-loader'
+			},
+			{
 				test:/\.css$/,
 				loader:'postcss-loader',
 				include:path.resolve(__dirname,'srcs/css'),
@@ -59,7 +71,7 @@ module.exports = {
             ];
           }
 				}
-			},
+			}
 
 
 		]
