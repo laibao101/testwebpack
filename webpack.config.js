@@ -9,7 +9,14 @@ module.exports = {
 	},
 	output:{
 		filename:'js/[name].bundle.js',
-		path:'./dist'
+		path:path.resolve(__dirname) + './dist',
+	},
+	devServer:{
+		port:9003,
+		historyApiFallback: true,
+    hot: true,
+    inline: true,
+		contentBase: path.resolve(__dirname) + '/dist/',
 	},
 	plugins:[
 		new htmlWebpackPlugin({
@@ -71,6 +78,10 @@ module.exports = {
             ];
           }
 				}
+			},
+			{
+				test:/\.html$/,
+				loader:'html-loader'
 			}
 
 
